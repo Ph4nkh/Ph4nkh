@@ -1,4 +1,4 @@
-name: Mwraaahh
+name: ph4nk
 
 on:
   schedule:
@@ -9,25 +9,23 @@ permissions:
   contents: write
 
 jobs:
-  auto-commit:
+  ph4nk:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Random Commits (2 to 10)
+      - name: ph4nk
         run: |
           git config --global user.name "MwrH000"
           git config --global user.email "nxy.moraa@gmail.com"
 
-          COUNT=$(( ( RANDOM % 9 ) + 2 ))
-          echo "Making $COUNT commits today..."
+          COUNT=$(( ( RANDOM % 20 ) + 1 ))
 
           for i in $(seq 1 $COUNT); do
-            echo "Last active ($i/$COUNT): $(date -u)" >> log.txt
+            date -u >> log.txt
             git add log.txt
-            git commit -m "Fixing #$i"
-            sleep 2
+            git commit -m "ph4nk"
           done
 
           git pull --rebase origin main
